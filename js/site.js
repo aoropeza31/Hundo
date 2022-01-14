@@ -20,7 +20,7 @@ function getValues(){
         alert("You must enter integers")
     }
     //call generate numbers
-    numbers = generateNumbers(startValue, endValue);
+    //numbers = generateNumbers(startValue, endValue);
 }
 
 //generate numbers from startvalue to endvalue
@@ -28,9 +28,9 @@ function getValues(){
 function generateNumbers(startValue, endValue){
     let numbers = [];
     //we want to get all numbers from start to end
-    for(let i=startValue; i<=endValue; index++){
+    for(let i=startValue; i<=endValue; i++){
         //this will execute in a loop until index = eValue;
-        numbers.push(index);
+        numbers.push(i);
     }
     return numbers;
 }
@@ -41,6 +41,7 @@ function displayNumbers(numbers){
     let templateRows = "";
 
     for (let index = 0; index < numbers.length; index++) {
+        
         let className = "even"
         let number = numbers[index];
         if(number % 2  == 0){
