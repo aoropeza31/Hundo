@@ -46,10 +46,12 @@ function displayNumbers(numbers){
         let number = numbers[index];
         if(number % 2  == 0){
             className = "even"
+            spanClassName = "text-primary text-gradient"
         }else{
             className = "odd"
+            spanClassName = "text-secondary"
         }
-        templateRows += `<tr><td class="${className}">${number}</td></tr>`
+        templateRows += `<tr><td class="${className}"><span class="${spanClassName}">${number}</span></td></tr>`
     }
 
     document.getElementById("results").innerHTML = templateRows;

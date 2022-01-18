@@ -1,6 +1,6 @@
 :root{
-    --primary-color: #88481d;
-    --secondary-color: #c726a4;
+    --primary-color: #d13737ac;
+    --secondary-color: #ef6f00ce;
     --dark-color: #292929;
     --white-color: #dff3e4;
 }
@@ -12,11 +12,14 @@
     font-size: large;
 }
 .logoFont {
-    font-family: 'Playfair Display', serif;
-    letter-spacing: 5px;
+    font-family: 'Roboto Mono', monospace;
+    letter-spacing: 4px;
+
 }
 body{
     color: var(--dark-color);
+    font-family:'Courier New', Courier, monospace;
+
 
 }
 
@@ -24,16 +27,62 @@ nav{
     background-color: var(--dark-color);
 }
 
-footer{
-    background-color: var(--dark-color);
+.navbar {
+    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 16%);
+}
+.text-gradient.text-primary {
+    background-image: linear-gradient(
+310deg
+,#ca3e28,#ffaa00);
+}
+.text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    z-index: 1;
+}
+.text-primary {
+    color: #eeff00!important;
 }
 
-h1,h2,h3,h4,h5,h6{
-    color: var(--primary-color);
+.text-secondary {
+    color: #8392ab!important;
 }
-
+.card {
+    box-shadow: 0 20px 27px 0 rgb(0 0 0 / 5%);
+    border-radius: 1rem;
+}
+.card-img, .card-img-top {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+.hover-underline-animation{
+    display: inline-block;
+    position: relative;
+}
+.hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--secondary-color);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+.hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+a:link {
+    text-decoration: none;
+  }
 footer{
     padding-right: 1rem;
+    padding-bottom: 10rem;
 }
 
 footer .social>a{
@@ -73,10 +122,4 @@ word-wrap: break-word;
 main>.container {
     padding: 60px 15px 0;
     margin-bottom: 5rem;
-}
-.sticky-footer {
-    position: sticky;
-    left: 0;
-    bottom: 0;
-    width: 100%;
 }
