@@ -12,15 +12,13 @@ function getValues(){
 
     //
     if(Number.isInteger(startValue)&& Number.isInteger(endValue)){
-        //callk generateNumbers
+        //call generateNumbers
         let numbers = generateNumbers(startValue, endValue);
         //call display numbers
         displayNumbers(numbers);
     }else{
         alert("You must enter integers")
     }
-    //call generate numbers
-    //numbers = generateNumbers(startValue, endValue);
 }
 
 //generate numbers from startvalue to endvalue
@@ -45,10 +43,10 @@ function displayNumbers(numbers){
         let className = "even"
         let number = numbers[index];
         if(number % 2  == 0){
-            className = "even"
+            className = "align-middle text-center even"
             spanClassName = "text-primary text-gradient"
         }else{
-            className = "odd"
+            className = "align-middle text-center odd"
             spanClassName = "text-secondary"
         }
         templateRows += `<tr><td class="${className}"><span class="${spanClassName}">${number}</span></td></tr>`

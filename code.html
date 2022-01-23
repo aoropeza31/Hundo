@@ -51,73 +51,82 @@
     <!--Main Section-->
     <main class="flex-shrink-0">
         <div class="container py-5 px-5 mt-5">
-            <h2 class="border-1 border-bottom border-dark">CODE for <span class="logoFont">number-combustion</span></h2>
+            <h2 class="text-gradient text-primary fw-bold border-bottom">Number-Combustion: The Code</h2>
              <div class="row row-cols-1 row-cols-lg-2">
-                 <div class="col-lg-8">
-                    <pre class="line-numbers"><code class="language-javascript">
-                        //get the values from the the page
-                        //starts or controlloer function
-                        function getValues(){
-                            //get value from the page
-                            let startValue = document.getElementById("startValue").value;
-                            let endValue = document.getElementById("endValue").value;
-                        
-                            //we need to validate our input
-                            //parse into integer
-                            startValue = parseInt(startValue);
-                            endValue = parseInt(endValue);
-                        
-                            //
-                            if(Number.isInteger(startValue)&& Number.isInteger(endValue)){
-                                //callk generateNumbers
-                                let numbers = generateNumbers(startValue, endValue);
-                                //call display numbers
-                                displayNumbers(numbers);
-                            }else{
-                                alert("You must enter integers")
-                            }
-                            //call generate numbers
-                            numbers = generateNumbers(startValue, endValue);
-                        }
-                        
-                        //generate numbers from startvalue to endvalue
-                        //logic function(s)
-                        function generateNumbers(startValue, endValue){
-                            let numbers = [];
-                            //we want to get all numbers from start to end
-                            for(let i=startValue; i<=endValue; index++){
-                                //this will execute in a loop until index = eValue;
-                                numbers.push(index);
-                            }
-                            return numbers;
-                        }
-                        
-                        //display even numbers and mark them bold
-                        //display or view functions
-                        function displayNumbers(numbers){
-                            let templateRows = "";
-                        
-                            for (let index = 0; index < numbers.length; index++) {
-                                let className = "even"
-                                let number = numbers[index];
-                                if(number % 2  == 0){
-                                    className = "even"
+                 <div class="col-lg-8 mt-3">
+                     <div class="card d-flex justify-content-center p-4 shadow-lg">
+                        <pre class="line-numbers language-javascript"><code class="language-javascript">
+                            //get the values from the the page
+                            //starts or controlloer function
+                            function getValues(){
+                                //get value from the page
+                                let startValue = document.getElementById("startValue").value;
+                                let endValue = document.getElementById("endValue").value;
+                            
+                                //we need to validate our input
+                                //parse into integer
+                                startValue = parseInt(startValue);
+                                endValue = parseInt(endValue);
+                            
+                                //
+                                if(Number.isInteger(startValue)&& Number.isInteger(endValue)){
+                                    //call generateNumbers
+                                    let numbers = generateNumbers(startValue, endValue);
+                                    //call display numbers
+                                    displayNumbers(numbers);
                                 }else{
-                                    className = "odd"
+                                    alert("You must enter integers")
                                 }
-                                //this does render correctly with Prism see the source
-                                templateRows += `<tr><td class="${className}">${number}</td></tr>`
                             }
-                        
-                            document.getElementById("results").innerHTML = templateRows;
-                        }
-                        </code>
-                    </pre>
+                            
+                            //generate numbers from startvalue to endvalue
+                            //logic function(s)
+                            function generateNumbers(startValue, endValue){
+                                let numbers = [];
+                                //we want to get all numbers from start to end
+                                for(let i=startValue; i<=endValue; i++){
+                                    //this will execute in a loop until index = eValue;
+                                    numbers.push(i);
+                                }
+                                return numbers;
+                            }
+                            
+                            //display even numbers and mark them bold
+                            //display or view functions
+                            function displayNumbers(numbers){
+                                let templateRows = "";
+                            
+                                for (let index = 0; index < numbers.length; index++) {
+                                    
+                                    let className = "even"
+                                    let number = numbers[index];
+                                    if(number % 2  == 0){
+                                        className = "align-middle text-center even"
+                                        spanClassName = "text-primary text-gradient"
+                                    }else{
+                                        className = "align-middle text-center odd"
+                                        spanClassName = "text-secondary"
+                                    }
+                                    //this does render correctly with Prism see the source
+                                    templateRows += `<tr><td class="${className}"><span class="${spanClassName}">${number}</span></td></tr>`
+                                }
+                            
+                                document.getElementById("results").innerHTML = templateRows;
+                            }
+                            </code>
+                        </pre>
+                     </div>
                  </div>
-                 <div class="col-lg-4">
-                    <p>The Code is structed in one function.</p>
-                    <h5>Hello World</h5>
-                    <p>Hello world is a function that displays an alert with a message of "Hello World"</p>
+                 <div class="col-lg-4 mt-lg-3 mt-5">
+                    <h4 class="text-gradient text-primary fw-bold">getValues()</h4>
+                    <p>The <span class="text-gradient text-primary fw-bold">getValues()</span> function starts off by getting the starting value and the end value from the page. </p>
+                    <p>This function uses an <span class="text-gradient text-primary fw-bold">if/else statement</span> to validate the values. But first, the <span class="text-gradient text-primary fw-bold">parseInt()</span> method is used to insure that every input is an integer.</p>
+                    <h4 class="text-gradient text-primary fw-bold">generateNumbers()</h4>
+                    <p>The <span class="text-gradient text-primary fw-bold">generateNumbers()</span> function generates the numbers that was retrieved from the start value and the end value.</p>
+                    <p>Here we use a <span class="text-gradient text-primary fw-bold">for loop</span> to loop through the numbers from the start and end values. We then push the numbers to an <span class="text-gradient text-primary fw-bold">array</span>. </p>
+                    <h4 class="text-gradient text-primary fw-bold">displayNumbers()</h4>
+                    <p>The <span class="text-gradient text-primary fw-bold">displayNumers()</span> function ultimately displays the numbers in a table. We use a <span class="text-gradient text-primary fw-bold">for loop</span> and an <span class="text-gradient text-primary fw-bold">if/else statement</span> to create the table.</p>
+                    <p>We make sure to style the even numbers in the <span class="text-gradient text-primary fw-bold">if/else statement</span>.</p>
                  </div>
              </div>
         </div>
